@@ -1,3 +1,5 @@
+Updated: 2026-06-07
+
 # 🩺 Clinical Outcome Extraction Pipeline (Medical NLP AI Engine)
 
 An enterprise-grade, highly resilient Natural Language Processing (NLP) pipeline designed to ingest complex, multi-page clinical trial publications (PDFs) and extract precise, structured, quantitative safety and efficacy metrics (MACE, implant survival, hazard ratios, etc.) into standardized database formats using Google’s Gemini (`gemini-2.5-flash`) models.
