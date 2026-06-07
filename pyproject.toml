@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "outcome-extraction"
+version = "0.1.0"
+description = "Structured outcome measure extraction from clinical trial PDFs"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+dependencies = [
+    "langchain-core>=0.3.49",
+    "langchain-text-splitters>=0.3.7",
+    "langchain-google-genai>=2.1.2",
+    "pdfplumber>=0.11.6",
+    "pydantic>=2.10.6,<3.0",
+    "python-dotenv>=1.0.0",
+    "openpyxl>=3.1.0",
+    "pandas>=2.0.0",
+]
+
+[project.optional-dependencies]
+anthropic = ["langchain-anthropic>=0.3.10"]
+openai = ["langchain-openai>=0.3.11"]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
